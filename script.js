@@ -72,3 +72,13 @@ function initApp() {
 loadComponent("navbar", "navbar.html").then(() => {
     loadComponent("footer", "footer.html").then(initApp);
 });
+
+//Hamburgur Menu
+// const hamburgur = document.querySelector(".hamburgur");
+// const rightNav = document.querySelector(".rightNav");
+
+// hamburgur.addEventListener("click", () => {
+//     rightNav.classList.toggle("active");
+//     hamburgur.classList.toggle("active");
+// });
+
