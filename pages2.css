@@ -161,8 +161,12 @@
         flex-direction: column;
     }
 
-    .aboutImage img, .contactInfo {
+    .aboutImage img{
         max-width: 100%;
     }
+/* 
+    .formGroup input, .formGroup textarea{
+
+    } */
 }
     

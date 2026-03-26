@@ -126,26 +126,68 @@ body {
   justify-content: space-between;
 }
 
-.hamburgur {
-  display: block;
+.hamburger {
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   position: absolute;
   top: 10px;
   right: 15px;
-  visibility: hidden;
+  display: none;
+  z-index: 101;
+  transition: all 0.3s ease-in-out;
 }
-.line {
-  width: 25px;
+
+.hamburger .line {
+  width: 100%;
   height: 3px;
-  background-color: var(--txt-color);
+  background-color: #fff;
   margin: 5px 0;
+  transition: all 0.3s ease-in-out;
 }
+
+/* Hamburger Animation to 'X' */
+.hamburger.open .line-1 {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.hamburger.open .line-2 {
+  opacity: 0;
+}
+
+.hamburger.open .line-3 {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Overlay Styles */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 98;
+  /* Below menu */
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+}
+
+.overlay.active {
+  background-color: #7155c744;
+  opacity: 1;
+  visibility: visible;
+}
+
 
 /* navbar section */
 @media screen and (max-width: 768px) {
   .navBar {
-    flex-direction: column;
-    height: auto;
+    height: 3.5rem;
   }
 
   .myName {
@@ -155,18 +197,54 @@ body {
     font-size: 1.5rem;
   }
 
+  .hamburger {
+    display: block;
+  }
+
   .rightNav {
-    height: 3rem;
-    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(49, 58, 97, 0.884);
+    padding-top: 80px; /* Space for header/logo */
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    z-index: 99; /* Below hamburger, above overlay */
+
+    /* visibility: hidden; */
   }
 
   .rightNav ul {
     flex-direction: column;
-    align-items: center;
+    width: 100%;
   }
 
-  .rightNav ul li {
-    margin: 10px 0;
+  .rightNav ul li a {
+    display: block;
+    margin: 0;
+    padding: 15px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(123, 137, 182);
+    transition: background-color 0.2s ease;
+    border-radius: 0px;
+  }
+
+  .rightNav ul li:last-child a {
+    border-bottom: none;
+  }
+  /* 
+  .rightNav ul li a.active{
+    background-color: transparent
+  } */
+
+  .rightNav ul li a:hover {
+    background-color: #5639ac8a;
+  }
+  .rightNav.active {
+    right: 0;
   }
 
   .firstSection,
@@ -188,6 +266,7 @@ body {
   }
 
   .role {
+    height: 450px;
     width: 100%;
   }
 
@@ -200,11 +279,8 @@ body {
     position: relative;
     top: 20px;
   }
-
-  .hamburgur {
-    visibility: visible;
-  }
 }
+
 .secondSection {
   display: flex;
   flex-direction: column;
