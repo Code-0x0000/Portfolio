@@ -97,6 +97,7 @@
 
 .socialLinks {
     margin-top: 30px;
+    display: flex;
 }
 
 .socialLinks a {
@@ -111,6 +112,8 @@
 }
 
 .contactForm {
+    display: flex;
+    flex-direction: column;
     background: var(--header-color);
     padding: 30px;
     border-radius: 10px;
@@ -128,7 +131,7 @@
 }
 
 .formGroup input, .formGroup textarea {
-    width: 100%;
+    width: 97%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -164,9 +167,10 @@
     .aboutImage img{
         max-width: 100%;
     }
-/* 
-    .formGroup input, .formGroup textarea{
 
-    } */
+    .formGroup input, .formGroup textarea{
+        width: 94%;
+
+    }
 }
     
