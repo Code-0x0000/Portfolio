@@ -60,7 +60,9 @@
     margin-bottom: 10px;
     color: #007bff;
 }
-
+.aboutBtn{
+    text-align: center;
+}
 .aboutBtn .btn {
     background: #007bff;
     color: white;
@@ -156,6 +158,10 @@
 
 .contactSection .btn:hover {
     background: #0056b3;
+}
+
+.btnbox {
+    text-align: center;
 }
 
 /* Responsive Design */
